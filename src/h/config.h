@@ -13,6 +13,8 @@ namespace config {
     extern const uint8_t LOGO_COLS;
 
     extern TextAlign TEXT_ALIGN;
+    extern TextMode TEXT_MODE;
+    extern int TEXT_LENGTH;
     extern int TERM_ROWS;
     extern int TERM_COLS;
 

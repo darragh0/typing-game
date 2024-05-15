@@ -1,7 +1,6 @@
 #include "../h/config.h"
 
 #include <iostream>
-#include <fstream>
 
 #include <conio.h>
 #include <windows.h>
@@ -26,9 +25,7 @@ int main() {
     config::TERM_COLS = csbi.srWindow.Right - csbi.srWindow.Left + 1;
     config::TERM_ROWS = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 
-    std::ifstream file("snippets/cpp/test.txt");
-    std::string text;
-    getline(file, text);
+    const std::string text = newText(config::TEXT_MODE);
 
     int chr;
     int index = 0;
@@ -37,9 +34,10 @@ int main() {
     system("cls");
     print_logo();
 
-    while (index != 27) {
+    showText(&text, &index, err);
 
-        showText(&text, &index, err);
+    while (index != config::TEXT_LENGTH) {
+
         chr = _getch();
 
         switch (chr) {
@@ -51,22 +49,31 @@ int main() {
                     index--;
 
                 err = false;
-                continue;
+                break;
 
             default:
+                // Don't allow user to override incorrect char
+                if (err) continue;
+
+                bool correct = (chr == text[index]);
+                index += correct;
+                err = !correct;
                 break;
         }
 
-        // Don't allow user to override incorrect char
-        if (err) continue;
-
-        bool correct = (chr == text[index]);
-        index += correct;
-        err = !correct;
+        showText(&text, &index, err);
     }
 
     exit:
-        refresh_then_print("         You win!          ");
+        const std::string msg = "You win!";
+        std::stringstream msg_output;
+        const size_t padding_width = (config::TERM_COLS - msg.length()) / 2;
+
+        for (int i = 0; i < padding_width; i++)
+            msg_output << ' ';
+
+        msg_output << msg;
+        std::cout << '\n' << msg_output.str() << std::endl;
 
     do {chr = _getch();} while (chr != SpecialChar::ESC);
 

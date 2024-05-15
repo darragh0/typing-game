@@ -10,7 +10,9 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="typing_game" targetName="typing_game" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -19,7 +21,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89fe5408-667e-4cf0-b507-52aa49a75ae9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snippets/cpp/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cpp/config.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpp/config.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cpp/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpp/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cpp/util.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpp/util.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/h/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/h/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/h/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/h/util.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +39,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -64,6 +75,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;C/C++ File.main.cpp.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.typing_game.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -83,25 +95,24 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\darra\Projects\CLion\typing-game\config" />
       <recent name="C:\Users\darra\Projects\CLion\typing-game" />
+      <recent name="C:\Users\darra\Projects\CLion\typing-game\src\h" />
+      <recent name="C:\Users\darra\Projects\CLion\typing-game\src\cpp" />
       <recent name="C:\Users\darra\Projects\CLion\typing-game\snippets" />
-      <recent name="C:\Users\darra\Projects\CLion\typing-game\snippets\cpp" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Debug.Unnamed">
-    <configuration name="Unnamed" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory">
-      <method v="2" />
-    </configuration>
-    <configuration name="main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="typing-game" TARGET_NAME="main.cpp" CONFIG_NAME="main.cpp">
-      <option name="sourceFile" value="main.cpp" />
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="C/C++ File.main.cpp" />
-      <item itemvalue="CMake Debug.Unnamed" />
-    </list>
+    <configuration name="typing_game" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="typing_game" TARGET_NAME="typing_game" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="typing_game" RUN_TARGET_NAME="typing_game">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -113,7 +124,8 @@
       <updated>1715619864144</updated>
       <workItem from="1715619866544" duration="1672000" />
       <workItem from="1715621585288" duration="3624000" />
-      <workItem from="1715718441829" duration="14750000" />
+      <workItem from="1715718441829" duration="15388000" />
+      <workItem from="1715773315178" duration="3335000" />
     </task>
     <servers />
   </component>

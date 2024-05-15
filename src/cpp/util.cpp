@@ -3,9 +3,13 @@
 
 #include <unordered_map>
 #include <iostream>
+#include <string_view>
+#include <fstream>
+#include <sstream>
+#include <random>
 
 
-const std::string ansi_code_str(AnsiCode code) {
+std::string ansi_code_str(AnsiCode code) {
 
     static std::unordered_map<AnsiCode, std::string> cache = {};
 
@@ -72,11 +76,11 @@ void refresh_then_print(const std::string& string) {
             break;
 
         case TextAlign::CENTER:
-            padding_width = (config::TERM_COLS - 27) / 2;
+            padding_width = (config::TERM_COLS - config::TEXT_LENGTH - 1) / 2;
             break;
 
         case TextAlign::RIGHT:
-            padding_width = (config::TERM_COLS - 27);
+            padding_width = (config::TERM_COLS - config::TEXT_LENGTH - 1);
             break;
     }
 
@@ -117,3 +121,44 @@ void showText(const std::string* text, const int* index, bool err) {
     refresh_then_print(out);
 }
 
+
+std::string newText(TextMode mode) {
+
+    std::stringstream text;
+
+    switch (mode) {
+        case TextMode::WORDS:
+            std::random_device seeder;
+            std::mt19937 engine(seeder());
+            std::uniform_int_distribution<int> generator(1, 370105);
+
+            int random_numbers[5] = {};
+
+            for (int& random_number : random_numbers)
+                random_number = generator(engine);
+
+            std::ifstream file("text/words.txt");
+            std::string line;
+
+            int line_number = 0;
+            int count = 1;
+
+            while (count < 5) {
+                std::getline(file, line);
+                line_number++;
+
+                for (int& random_number : random_numbers) {
+                    if (random_number == line_number) {
+                        count++;
+                        text << line << (count == 5 ? "" : " ");
+                    }
+                }
+            }
+
+    }
+
+    const std::string words = text.str();
+    config::TEXT_LENGTH = words.length();
+    return words;
+
+}

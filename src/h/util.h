@@ -11,6 +11,11 @@ enum TextAlign {
 };
 
 
+enum TextMode {
+    WORDS = 0
+};
+
+
 enum AnsiCode {
     RESET,
     GOTO_TOP,
@@ -27,8 +32,9 @@ enum SpecialChar {
 };
 
 
-const std::string ansi_code_str(AnsiCode code);
+std::string ansi_code_str(AnsiCode code);
 void print_logo();
 void refresh_then_print(const std::string& stream);
 void refresh_then_print(const std::stringstream& stream);
 void showText(const std::string* text, const int* index, bool err);
+std::string newText(TextMode mode);

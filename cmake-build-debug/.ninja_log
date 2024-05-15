@@ -1,0 +1,6 @@
+# ninja log v5
+1	142	7374374137878007	build.ninja	dc8829d1c3465bb6
+10	556	7374373719173246	CMakeFiles/typing_game.dir/src/cpp/config.cpp.obj	d06e7582a60e2d48
+6	1538	7374373728989155	CMakeFiles/typing_game.dir/src/cpp/main.cpp.obj	cb2c1f620e78aa9d
+2	674	7374373720344643	CMakeFiles/typing_game.dir/src/cpp/util.cpp.obj	c48c20999b66e881
+1539	1759	7374373731132154	typing_game.exe	3f7da4ab7cf6fef1

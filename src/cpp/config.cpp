@@ -19,6 +19,8 @@ const char* config::LOGO =
 int config::TERM_ROWS = 0;
 int config::TERM_COLS = 0;
 TextAlign config::TEXT_ALIGN = TextAlign::LEFT;
+TextMode config::TEXT_MODE = TextMode::WORDS;
+int config::TEXT_LENGTH = 0;
 
 
 void config::parse_settings_toml() {
@@ -27,8 +29,10 @@ void config::parse_settings_toml() {
     std::string line;
     const char partition = '=';
 
+    std::cout << "Settings:\n";
+
     while (std::getline(file, line)) {
-        int symbol_partition = line.find(partition);
+        size_t symbol_partition = line.find(partition);
         const std::string name = line.substr(0, symbol_partition - 1);
         const std::string value = line.substr(
             symbol_partition + 3,
@@ -46,6 +50,13 @@ void config::parse_settings_toml() {
                 TEXT_ALIGN = TextAlign::RIGHT;
             else
                 throw SettingsParsingException("Missing or invalid value for setting 'text-align': '" + value + "'");
+        }
+
+        else if (name == "text-mode") {
+            if (value == "words")
+                TEXT_MODE = TextMode::WORDS;
+            else
+                throw SettingsParsingException("Missing or invalid value for setting 'text-mode': '" + value + "'");
         }
 
     }
